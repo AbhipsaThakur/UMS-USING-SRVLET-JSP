@@ -18,7 +18,7 @@ public class ResetPasswordServlet extends HttpServlet {
         
         String dbUrl = "jdbc:mysql://localhost:3306/universitymanagementsystem1";
         String dbUser = "root";
-        String dbPass = "Abhipsa299@";
+        String dbPass = "Abhipsa";
 
         try (Connection con = DriverManager.getConnection(dbUrl, dbUser, dbPass)) {
             PreparedStatement ps = con.prepareStatement("UPDATE registration SET password=?, reset_token=NULL WHERE reset_token=?");
