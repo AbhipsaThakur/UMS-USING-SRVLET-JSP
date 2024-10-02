@@ -206,10 +206,10 @@
                 <tr class="economics">
                     <td>Economics</td>
                     <td>Master of Economics</td>
-                    <td>$8,500</td>
-                    <td>$1,300</td>
-                    <td>$400</td>
-                    <td>$10,200</td>
+                    <td>rs8,500</td>
+                    <td>rs1,300</td>
+                    <td>rs400</td>
+                    <td>rs10,200</td>
                 </tr>
             </tbody>
         </table>
