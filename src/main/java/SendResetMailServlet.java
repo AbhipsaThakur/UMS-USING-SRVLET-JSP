@@ -32,7 +32,7 @@ public class SendResetMailServlet extends HttpServlet {
 
         String host = "smtp.gmail.com";
         final String senderEmail = "jagannathuniversityoftechnolog@gmail.com";
-        final String senderPassword = "Abhipsa299@";
+        final String senderPassword = "rbdd jdle mvxu fhnv";
         String errorMessage = null;
         String successMessage = null;
         boolean emailExists = false;
