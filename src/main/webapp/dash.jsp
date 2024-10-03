@@ -16,7 +16,87 @@
             padding: 0;
         }
 
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar .menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .navbar .user-info {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-right: 50px;
+        }
+
+        .navbar .user-icon {
+            font-size: 25px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .navbar .username {
+            font-size: 18px;
+            display: none;
+            position: absolute;
+            top: 40px;
+            right: 0;
+            background-color: white;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .user-info:hover .username {
+            display: block;
+        }
+
+        .sidebar {
+            background-color: #333;
+            color: white;
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            transition: 0.3s;
+            z-index: 999;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 15px;
+            border-bottom: 1px solid #444;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .sidebar.show {
+            left: 0;
+        }
+
         .container {
+            margin-top: 80px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -25,8 +105,15 @@
 
         h1 {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
             color: #333;
+        }
+
+        .welcome-message {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #555;
+            font-size: 18px;
         }
 
         .dashboard-grid {
@@ -60,43 +147,59 @@
         }
 
         /* Additional Styling for Icons */
-        .attendance {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        .course, .fees {
-            background-color: #2196F3;
-            color: white;
-        }
-
-        .college-info, .performance {
-            background-color: #FFC107;
-            color: white;
-        }
-
-        .my-report-card, .feedback {
-            background-color: #FF5722;
-            color: white;
-        }
-
-        .time-table, .assignment, .project {
-            background-color: #9C27B0;
-            color: white;
-        }
+        .attendance { background-color: #4CAF50; color: white; }
+        .course, .fees { background-color: #2196F3; color: white; }
+        .college-info, .performance { background-color: #FFC107; color: white; }
+        .my-report-card, .feedback { background-color: #FF5722; color: white; }
+        .time-table, .assignment, .project { background-color: #9C27B0; color: white; }
 
         /* Link styling */
         a {
             text-decoration: none;
             color: inherit;
         }
-
     </style>
 </head>
 <body>
 
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="menu-icon" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="user-info">
+            <i class="fas fa-user user-icon"></i>
+            <div class="username">
+                <% 
+                    HttpSession sp = request.getSession(false);
+                    if (sp != null) {
+                        String username = (String) sp.getAttribute("username");
+                        out.print(username);
+                    }
+                %>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </div>
+
     <div class="container">
-        <h1>Student Dashboard</h1>
+        <div class="welcome-message">
+            <% 
+                if (sp != null) {
+                    out.print("Welcome, " + (String) sp.getAttribute("username"));
+                }
+            %>
+        </div>
+
         <div class="dashboard-grid">
 
             <a href="attendance.jsp">
@@ -106,7 +209,7 @@
                 </div>
             </a>
 
-            <a href="cource.jsp">
+            <a href="course.jsp">
                 <div class="dashboard-item course">
                     <i class="fas fa-book"></i>
                     <p>Course</p>
@@ -172,5 +275,11 @@
         </div>
     </div>
 
+    <!-- JavaScript for toggling sidebar -->
+    <script>
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("show");
+        }
+    </script>
 </body>
 </html>
