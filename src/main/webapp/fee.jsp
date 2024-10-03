@@ -115,105 +115,53 @@
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
             }
         }
-
     </style>
 </head>
+
 <body>
-
     <div class="container">
-        <h1>University Fees Structure</h1>
-
-        <!-- Fee Structure Table -->
+        <h1>Course Fees Structure</h1>
         <table class="fee-table">
             <thead>
                 <tr>
+                    <th>Course</th>
                     <th>Department</th>
-                    <th>Course Name</th>
-                    <th>Yearly Tuition Fee</th>
-                    <th>Hostel Fee (Optional)</th>
-                    <th>Miscellaneous Charges</th>
-                    <th>Total Fees</th>
+                    <th>Duration</th>
+                    <th>Fees (per year)</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Computer Science Fees -->
                 <tr class="cs">
+                    <td>Bachelor of Science</td>
                     <td>Computer Science</td>
-                    <td>Bachelor of Computer Science</td>
-                    <td>$8,000</td>
-                    <td>$1,500</td>
-                    <td>$500</td>
-                    <td>$10,000</td>
-                </tr>
-                <tr class="cs">
-                    <td>Computer Science</td>
-                    <td>Master of Computer Science</td>
-                    <td>$10,000</td>
-                    <td>$1,500</td>
-                    <td>$600</td>
-                    <td>$12,100</td>
-                </tr>
-                <!-- Psychology Fees -->
-                <tr class="psychology">
-                    <td>Psychology</td>
-                    <td>Bachelor of Psychology</td>
-                    <td>$7,500</td>
-                    <td>$1,200</td>
-                    <td>$400</td>
-                    <td>$9,100</td>
+                    <td>3 years</td>
+                    <td>$5000</td>
                 </tr>
                 <tr class="psychology">
+                    <td>Bachelor of Arts</td>
                     <td>Psychology</td>
-                    <td>Master of Psychology</td>
-                    <td>$9,000</td>
-                    <td>$1,200</td>
-                    <td>$500</td>
-                    <td>$10,700</td>
+                    <td>3 years</td>
+                    <td>$4500</td>
                 </tr>
-                <!-- Nursing Fees -->
                 <tr class="nursing">
-                    <td>Nursing</td>
                     <td>Bachelor of Nursing</td>
-                    <td>$9,000</td>
-                    <td>$1,800</td>
-                    <td>$600</td>
-                    <td>$11,400</td>
-                </tr>
-                <tr class="nursing">
                     <td>Nursing</td>
-                    <td>Master of Nursing</td>
-                    <td>$11,000</td>
-                    <td>$1,800</td>
-                    <td>$700</td>
-                    <td>$13,500</td>
-                </tr>
-                <!-- Economics Fees -->
-                <tr class="economics">
-                    <td>Economics</td>
-                    <td>Bachelor of Economics</td>
-                    <td>$7,000</td>
-                    <td>$1,300</td>
-                    <td>$300</td>
-                    <td>$8,600</td>
+                    <td>4 years</td>
+                    <td>$6000</td>
                 </tr>
                 <tr class="economics">
+                    <td>Bachelor of Arts</td>
                     <td>Economics</td>
-                    <td>Master of Economics</td>
-                    <td>rs8,500</td>
-                    <td>rs1,300</td>
-                    <td>rs400</td>
-                    <td>rs10,200</td>
+                    <td>3 years</td>
+                    <td>$4000</td>
                 </tr>
             </tbody>
         </table>
     </div>
-
 </body>
 </html>
