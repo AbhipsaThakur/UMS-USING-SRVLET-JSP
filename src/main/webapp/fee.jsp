@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fees | University Management System</title>
-    
+
     <!-- External CSS for Icons (FontAwesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -78,21 +78,35 @@
             background-color: #f1f1f1;
         }
 
-        /* Course Department Colors */
-        .cs {
-            background-color: #90CAF9;
+        /* Payment Form */
+        .payment-container {
+            text-align: center;
         }
 
-        .psychology {
-            background-color: #FFAB91;
+        .payment-form {
+            margin-top: 30px;
         }
 
-        .nursing {
-            background-color: #A5D6A7;
+        .payment-form input, .payment-form select {
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
         }
 
-        .economics {
-            background-color: #FFCC80;
+        .payment-form button {
+            padding: 10px 20px;
+            background-color: #1976D2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .payment-form button:hover {
+            background-color: #2196F3;
         }
 
         /* Responsive Styles */
@@ -109,111 +123,153 @@
             .container {
                 padding: 15px;
             }
+
+            .payment-form input, .payment-form select {
+                width: 100%;
+            }
         }
 
         /* Animation */
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
             }
         }
-
     </style>
 </head>
+
 <body>
-
     <div class="container">
-        <h1>University Fees Structure</h1>
-
-        <!-- Fee Structure Table -->
+        <h1>Course Fees Structure</h1>
         <table class="fee-table">
             <thead>
                 <tr>
+                    <th>Course</th>
                     <th>Department</th>
-                    <th>Course Name</th>
-                    <th>Yearly Tuition Fee</th>
-                    <th>Hostel Fee (Optional)</th>
-                    <th>Miscellaneous Charges</th>
-                    <th>Total Fees</th>
+                    <th>Duration</th>
+                    <th>Fees (per year)</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Computer Science Fees -->
                 <tr class="cs">
+                    <td>Bachelor of Science</td>
                     <td>Computer Science</td>
-                    <td>Bachelor of Computer Science</td>
-                    <td>$8,000</td>
-                    <td>$1,500</td>
-                    <td>$500</td>
-                    <td>$10,000</td>
-                </tr>
-                <tr class="cs">
-                    <td>Computer Science</td>
-                    <td>Master of Computer Science</td>
-                    <td>$10,000</td>
-                    <td>$1,500</td>
-                    <td>$600</td>
-                    <td>$12,100</td>
-                </tr>
-                <!-- Psychology Fees -->
-                <tr class="psychology">
-                    <td>Psychology</td>
-                    <td>Bachelor of Psychology</td>
-                    <td>$7,500</td>
-                    <td>$1,200</td>
-                    <td>$400</td>
-                    <td>$9,100</td>
+                    <td>3 years</td>
+                    <td>$5000</td>
                 </tr>
                 <tr class="psychology">
+                    <td>Bachelor of Arts</td>
                     <td>Psychology</td>
-                    <td>Master of Psychology</td>
-                    <td>$9,000</td>
-                    <td>$1,200</td>
-                    <td>$500</td>
-                    <td>$10,700</td>
+                    <td>3 years</td>
+                    <td>$4500</td>
                 </tr>
-                <!-- Nursing Fees -->
                 <tr class="nursing">
-                    <td>Nursing</td>
                     <td>Bachelor of Nursing</td>
-                    <td>$9,000</td>
-                    <td>$1,800</td>
-                    <td>$600</td>
-                    <td>$11,400</td>
-                </tr>
-                <tr class="nursing">
                     <td>Nursing</td>
-                    <td>Master of Nursing</td>
-                    <td>$11,000</td>
-                    <td>$1,800</td>
-                    <td>$700</td>
-                    <td>$13,500</td>
-                </tr>
-                <!-- Economics Fees -->
-                <tr class="economics">
-                    <td>Economics</td>
-                    <td>Bachelor of Economics</td>
-                    <td>$7,000</td>
-                    <td>$1,300</td>
-                    <td>$300</td>
-                    <td>$8,600</td>
+                    <td>4 years</td>
+                    <td>$6000</td>
                 </tr>
                 <tr class="economics">
+                    <td>Bachelor of Arts</td>
                     <td>Economics</td>
-                    <td>Master of Economics</td>
-                    <td>rs8,500</td>
-                    <td>rs1,300</td>
-                    <td>rs400</td>
-                    <td>rs10,200</td>
+                    <td>3 years</td>
+                    <td>$4000</td>
                 </tr>
             </tbody>
         </table>
+
+        <!-- Payment Form -->
+        <div class="payment-container">
+            <h2>Make a Payment</h2>
+            <form class="payment-form" id="paymentForm">
+                <input type="text" id="studentName" placeholder="Student Name" required><br>
+                <input type="email" id="studentEmail" placeholder="Student Email" required><br>
+                <select id="course">
+                    <option value="" disabled selected>Select Course</option>
+                    <option value="Bachelor of Science (CS)">Bachelor of Science (CS) - $5000</option>
+                    <option value="Bachelor of Arts (Psychology)">Bachelor of Arts (Psychology) - $4500</option>
+                    <option value="Bachelor of Nursing">Bachelor of Nursing - $6000</option>
+                    <option value="Bachelor of Arts (Economics)">Bachelor of Arts (Economics) - $4000</option>
+                </select><br>
+
+                <!-- Payment Methods -->
+                <select id="paymentMethod" required>
+                    <option value="" disabled selected>Select Payment Method</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Cash Counter">Cash at Counter</option>
+                </select><br>
+
+                <!-- Conditional Inputs for Payment Methods -->
+                <div id="cardDetails" style="display: none;">
+                    <input type="text" id="cardNumber" placeholder="Card Number"><br>
+                    <input type="text" id="expiryDate" placeholder="Expiry Date (MM/YY)"><br>
+                    <input type="text" id="cvv" placeholder="CVV"><br>
+                </div>
+
+                <div id="upiDetails" style="display: none;">
+                    <input type="text" id="upiId" placeholder="UPI ID"><br>
+                </div>
+
+                <button type="button" onclick="makePayment()">Submit Payment</button>
+            </form>
+        </div>
     </div>
 
+    <script>
+        const paymentMethod = document.getElementById('paymentMethod');
+        const cardDetails = document.getElementById('cardDetails');
+        const upiDetails = document.getElementById('upiDetails');
+
+        paymentMethod.addEventListener('change', function () {
+            cardDetails.style.display = paymentMethod.value === 'Credit Card' ? 'block' : 'none';
+            upiDetails.style.display = paymentMethod.value === 'UPI' ? 'block' : 'none';
+        });
+
+        function makePayment() {
+            const studentName = document.getElementById('studentName').value;
+            const studentEmail = document.getElementById('studentEmail').value;
+            const course = document.getElementById('course').value;
+            const paymentMethodValue = document.getElementById('paymentMethod').value;
+
+            // Payment Details based on method
+            let paymentDetails = '';
+
+            if (paymentMethodValue === 'Credit Card') {
+                const cardNumber = document.getElementById('cardNumber').value;
+                const expiryDate = document.getElementById('expiryDate').value;
+                const cvv = document.getElementById('cvv').value;
+
+                if (!cardNumber || !expiryDate || !cvv) {
+                    alert("Please fill in all the Credit Card details.");
+                    return;
+                }
+                paymentDetails = `Card Number: ${cardNumber}, Expiry Date: ${expiryDate}, CVV: ${cvv}`;
+            } else if (paymentMethodValue === 'UPI') {
+                const upiId = document.getElementById('upiId').value;
+                if (!upiId) {
+                    alert("Please fill in your UPI ID.");
+                    return;
+                }
+                paymentDetails = `UPI ID: ${upiId}`;
+            } else if (paymentMethodValue === 'Cash Counter') {
+                paymentDetails = 'Payment will be made at the cash counter.';
+            } else {
+                alert("Please select a payment method.");
+                return;
+            }
+
+            // Simulate payment processing
+            alert(`Payment for ${course} by ${studentName} (${paymentMethodValue}) has been processed successfully!\nDetails: ${paymentDetails}`);
+
+            // Reset the form
+            document.getElementById('paymentForm').reset();
+            cardDetails.style.display = 'none';
+            upiDetails.style.display = 'none';
+        }
+    </script>
 </body>
 </html>

@@ -16,6 +16,7 @@ import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/login")
 public class login extends HttpServlet {
+
     // Initialize Database connection
     public static Connection initializeDatabase() throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -43,20 +44,23 @@ public class login extends HttpServlet {
             Connection con = initializeDatabase();
 
             // SQL query to fetch user details with matching email and password
-            String query = "SELECT * FROM registration WHERE email = ? AND password = ?";
+            String query = "SELECT username FROM registration WHERE email = ? AND password = ?";
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, email);
-            ps.setString(2, password); // Adjust this part if you are hashing passwords
+            ps.setString(2, password); // Adjust this if passwords are hashed
 
             ResultSet rs = ps.executeQuery();
 
-            // If user is found, set session and redirect to dashboard
+            // If user is found
             if (rs.next()) {
-                HttpSession session = req.getSession();
-                session.setAttribute("username", rs.getString("username"));
+                String username = rs.getString("username");
 
-                // Redirect to Student Dashboard after successful login
-                resp.sendRedirect("Studentdashboard.jsp");
+                // Create a session and store the username
+                HttpSession session = req.getSession();
+                session.setAttribute("username", username);
+
+                // Redirect to the student dashboard
+                resp.sendRedirect("dash.jsp"); // Redirect to student dashboard
             } else {
                 // If invalid login, return error message
                 req.setAttribute("error", "Invalid email or password.");
