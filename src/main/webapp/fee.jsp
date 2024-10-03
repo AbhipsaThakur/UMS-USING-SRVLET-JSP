@@ -160,6 +160,59 @@
                     <td>3 years</td>
                     <td>$4000</td>
                 </tr>
+                <tr class="Business Administration">
+                    <td>Bachelor of Arts</td>
+                    <td>Economics</td>
+                    <td>3 years</td>
+                    <td>rs4000</td>
+                </tr>
+                <tr class="Engineering">
+                    <td>Bachelor of Arts</td>
+                    <td>Economics</td>
+                    <td>3 years</td>
+                    <td>rs4000</td>
+                </tr>
+                <tr class="Psychology">
+                    <td>Bachelor of Arts</td>
+                    <td>Economics</td>
+                    <td>3 years</td>
+                    <td>$4000</td>
+                </tr>
+                <tr class="Nursing">
+                    <td>Bachelor of Arts</td>
+                    <td>Economics</td>
+                    <td>3 years</td>
+                    <td>$4000</td>
+                </tr>
+                 
+                <tr class="Education">
+                    <td>Bachelor of Arts</td>
+                    <td>Economics</td>
+                    <td>3 years</td>
+                    <td>$4000</td>
+                </tr>
+                 
+                <tr class="Economics">
+                    <td>Bachelor of Arts</td>
+                    <td>Economics</td>
+                    <td>3 years</td>
+                    <td>$4000</td>
+                </tr>
+                 
+                <tr class="Mathematics">
+                    <td>Bachelor of Arts</td>
+                    <td>Economics</td>
+                    <td>3 years</td>
+                    <td>$4000</td>
+                </tr>
+                 
+                <tr class="Art and Design">
+                    <td>Bachelor of Arts</td>
+                    <td>Economics</td>
+                    <td>3 years</td>
+                    <td>$4000</td>
+                </tr>
+                
             </tbody>
         </table>
     </div>
