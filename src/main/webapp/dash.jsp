@@ -162,7 +162,6 @@
 </head>
 <body>
 
-    <!-- Navbar -->
     <div class="navbar">
         <div class="menu-icon" onclick="toggleSidebar()">
             <i class="fas fa-bars"></i>
@@ -180,14 +179,12 @@
             </div>
         </div>
     </div>
-
-    <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="index.jsp">Home</a></li>
             <li><a href="#">Profile</a></li>
             <li><a href="#">Settings</a></li>
-            <li><a href="#">Logout</a></li>
+            <li><a href="logout.jsp">Logout</a></li>
         </ul>
     </div>
 
