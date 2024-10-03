@@ -74,7 +74,6 @@ public class PaymentServlet extends HttpServlet {
                 return;
         }
 
-        // Process the payment (In real world, integrate with payment gateway here)
         out.println("<html><body>");
         out.println("<h2>Payment Success</h2>");
         out.println("<p>Student Name: " + studentName + "</p>");
@@ -85,10 +84,9 @@ public class PaymentServlet extends HttpServlet {
         out.println("</body></html>");
     }
 
-    // Optional: Implement the GET method to handle form submissions via GET (if needed)
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Redirect to the payment form if GET request is made
+
         response.sendRedirect("payment.html");
     }
 }
