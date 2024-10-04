@@ -1,7 +1,6 @@
 package in.backend.logout;
 
 import java.io.IOException;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -23,7 +22,7 @@ public class LogoutServlet extends HttpServlet {
             session.invalidate(); // This removes the session
         }
 
-        // Redirect the user to the login page or another page after logging out
-        response.sendRedirect("index.jsp"); // Change this to your login page path
+        // Redirect the user to the index page after logging out
+        response.sendRedirect("index.jsp"); // Changed to index.jsp
     }
 }
