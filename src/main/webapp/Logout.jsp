@@ -65,7 +65,7 @@
     </style>
 
     <!-- Auto redirect in 3 seconds -->
-    <meta http-equiv="refresh" content="3;url=login.jsp" />
+    <meta http-equiv="refresh" content="3;url=index.jsp" />
 </head>
 <body>
 
