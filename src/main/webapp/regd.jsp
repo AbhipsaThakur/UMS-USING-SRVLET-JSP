@@ -354,5 +354,11 @@
             input.addEventListener("blur", remcl);
         });
     </script>
+    <%
+    String error = (String) request.getAttribute("error");
+    if (error != null) {
+        out.println("<p style='color:red;'>" + error + "</p>");
+    }
+%>
 </body>
 </html>
