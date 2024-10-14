@@ -333,26 +333,26 @@
     </header>
 
     <main>
-        <section class="features">
-            <h2>Why Choose Us?</h2>
-            <div class="feature-grid">
-                <div class="feature">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Innovative Courses</h3>
-                    <p>We offer a wide range of courses designed to prepare you for the future.</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-users"></i>
-                    <h3>Experienced Faculty</h3>
-                    <p>Learn from industry experts and seasoned educators.</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-globe"></i>
-                    <h3>Global Opportunities</h3>
-                    <p>Access internships and study abroad programs worldwide.</p>
-                </div>
+        <section class="features" id="features">
+        <h2>Our Features</h2>
+        <div class="feature-grid">
+            <div class="feature">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Online Admission</h3>
+                <p>Seamless online admission process for students.</p>
             </div>
-        </section>
+            <div class="feature">
+                <i class="fas fa-book-open"></i>
+                <h3>Course Management</h3>
+                <p>Manage courses, schedules, and academic plans efficiently.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-user-tie"></i>
+                <h3>Faculty & Staff</h3>
+                <p>Dedicated faculty and staff to guide and mentor students.</p>
+            </div>
+        </div>
+    </section>
 
         <section class="events" id="events">
             <h2>Upcoming Events</h2>
@@ -387,6 +387,16 @@
                     <img src="img/avatar.svg" alt="Student 3">
                     <p>"The resources available to students are incredible!"</p>
                     <h3>Jeevan Jyoti Sahoo</h3>
+                </div>
+                <div class="testimonial-item">
+                    <img src="img/avatar.svg" alt="Student 3">
+                    <p>"The resources available to students are incredible!"</p>
+                    <h3>Gyana Ranjan Jena</h3>
+                </div>
+                <div class="testimonial-item">
+                    <img src="img/avatar.svg" alt="Student 3">
+                    <p>"The resources available to students are incredible!"</p>
+                    <h3>Mousumi Majhi</h3>
                 </div>
             </div>
         </section>
