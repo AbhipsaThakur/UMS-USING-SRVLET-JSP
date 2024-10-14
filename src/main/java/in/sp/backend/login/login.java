@@ -44,7 +44,7 @@ public class login extends HttpServlet {
             Connection con = initializeDatabase();
 
             // SQL query to fetch user details with matching email and password
-            String query = "SELECT username FROM registration WHERE email = ? AND password = ?";
+            String query = "SELECT username, role FROM registration WHERE email = ? AND password = ?";
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, email);
             ps.setString(2, password); // Adjust this if passwords are hashed
@@ -54,13 +54,22 @@ public class login extends HttpServlet {
             // If user is found
             if (rs.next()) {
                 String username = rs.getString("username");
+                String role = rs.getString("role"); // Fetch the role
 
                 // Create a session and store the username
                 HttpSession session = req.getSession();
                 session.setAttribute("username", username);
 
-                // Redirect to the student dashboard
-                resp.sendRedirect("dash.jsp"); // Redirect to student dashboard
+                // Redirect to the respective dashboard based on role
+                if ("student".equals(role)) {
+                    resp.sendRedirect("studentDashboard.jsp"); // Redirect to student dashboard
+                } else if ("faculty".equals(role)) {
+                    resp.sendRedirect("facultyDashboard.jsp"); // Redirect to faculty dashboard
+                } else {
+                    // Handle unexpected role
+                    req.setAttribute("error", "Invalid user role.");
+                    req.getRequestDispatcher("login.jsp").forward(req, resp);
+                }
             } else {
                 // If invalid login, return error message
                 req.setAttribute("error", "Invalid email or password.");
