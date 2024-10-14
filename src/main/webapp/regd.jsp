@@ -6,7 +6,7 @@
     <title>University Management System - Registration</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
-    <style>
+        <style>
         * {
             padding: 0;
             margin: 0;
@@ -283,6 +283,14 @@
             <form action="register" method="post">
                 <img src="img/avatar.svg">
                 <h2 class="title">Register</h2>
+                
+                <!-- Error message display -->
+                <div class="error-message" style="color: red;">
+                    <% if (request.getAttribute("error") != null) { %>
+                        <%= request.getAttribute("error") %>
+                    <% } %>
+                </div>
+
                 <div class="input-div one">
                     <div class="i">
                         <i class="fas fa-user"></i>
@@ -321,7 +329,7 @@
                 </div>
                 <input type="submit" class="btn" value="Register">
                 <div class="login-link">
-                    <a href="index.html">Already have an account? Login here</a>
+                    <a href="index.jsp">Already have an account? Login here</a>
                 </div>
             </form>
         </div>
